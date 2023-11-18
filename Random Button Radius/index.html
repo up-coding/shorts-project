@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Button Radius | upCoding</title>
+  </head>
+  <body
+    style="text-align: center; padding-top: 5rem; background-color: #542e71"
+  >
+    <button
+      style="
+        padding: 8px 15px;
+        background-color: #ff5b22;
+        border: #ff5b22;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s;
+      "
+    >
+      Refresh
+    </button>
+
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", () => {
+        let radius = `${Math.floor(Math.random() * 20)}px`;
+        button.style.borderRadius = radius;
+      });
+    </script>
+  </body>
+</html>
