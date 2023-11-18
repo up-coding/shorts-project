@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Navbar | upCoding</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #d2e0fb;
+        padding-top: 5rem;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 150px;
+        padding: 1rem 1.5rem;
+        border-radius: 30px;
+        background-color: white;
+        justify-content: space-between;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      nav i {
+        font-size: 1.7rem;
+        cursor: pointer;
+        color: #12486b;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <i class="fa-solid fa-house-user"></i>
+      <i class="fa-solid fa-address-card"></i>
+      <i class="fa-solid fa-user"></i>
+    </nav>
+    <script>
+      let iTags = document.querySelectorAll("nav i");
+      iTags.forEach((v) => {
+        v.addEventListener("mouseover", (e) => v.classList.add("fa-bounce"));
+
+        v.addEventListener("mouseleave", (e) =>
+          v.classList.remove("fa-bounce")
+        );
+      });
+    </script>
+  </body>
+</html>
