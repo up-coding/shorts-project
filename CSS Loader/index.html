@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: #252525;
+      }
+      .loader {
+        margin: 9rem auto auto 40rem;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+        
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader"></div>
+
+    <script>
+      const loader = document.querySelector(".loader");
+
+      const haxColor = () =>
+        Math.random().toString(16).slice(2, 8).padEnd(6, 0);
+
+      setInterval(() => {
+        loader.style.borderTop = `14px solid #${haxColor()}`;
+        loader.style.borderBottom = `14px solid #${haxColor()}`;
+        loader.style.borderLeft = `14px solid #${haxColor()}`;
+        loader.style.borderRight = `14px solid #${haxColor()}`;
+      }, 700);
+    </script>
+  </body>
+</html>
