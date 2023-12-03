@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square to Circle | upCoding</title>
+
+    <style>
+      body {
+        background: #f0f8ff;
+      }
+      .square {
+        width: 70px;
+        height: 70px;
+        border: 5px solid #252525;
+        background: transparent;
+        margin: 10rem auto auto 5rem;
+        box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+          rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
+          rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+        transition: 1s all;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square"></div>
+
+    <script>
+      const square = document.querySelector(".square");
+
+      const toggle = (r, ml) => {
+        let s = square.style;
+        s.borderRadius = r;
+        s.marginLeft = ml;
+      };
+
+      setInterval(() => toggle("50%", "30rem"), 1500);
+
+      setInterval(() => toggle("0", "5rem"), 3000);
+    </script>
+  </body>
+</html>
