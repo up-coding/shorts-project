@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+:root {
+  --bg-color: #73b0ff;
+  --container-color: transparent;
+  --container-width: 272px;
+  --container-height: 100px;
+  --container-border-radius: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  perspective: 300px;
+}
+
+.container {
+  background: var(--container-color);
+  border-radius: var(--container-border-radius);
+  width: var(--container-width);
+  height: var(--container-height);
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.front {
+  background: white;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.back {
+  background: white;
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backface-visibility: hidden;
+  width: var(--container-width);
+  height: var(--container-height);
+  border-radius: var(--container-border-radius);
+}
+
+.decrement,
+.increment {
+  width: 64px;
+  height: var(--container-height);
+  opacity: 0.2;
+}
+
+.decrement:hover,
+.increment:hover {
+  cursor: pointer;
+}
+
+.decrement {
+  background: url("http://frolovoleg.ru/images/decrement.svg") no-repeat center;
+}
+
+.increment {
+  background: url("http://frolovoleg.ru/images/increment.svg") no-repeat center;
+}
+
+.value_front,
+.value_back {
+  user-select: none;
+  font-size: 32px;
+  line-height: var(--container-height);
+  font-family: "Roboto Mono", "Courier", monospace;
+}
